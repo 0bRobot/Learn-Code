@@ -517,3 +517,197 @@ int main()
 	printf("这两个数的最大公约数是%d，最小公倍数是%d\n", b, n / b);
 	return 0;
 }
+
+// No.17
+#include <stdio.h>
+
+int main()
+//输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。
+{
+	char c;  //char 字符型
+	int ZM = 0, spaces = 0, Nu = 0, other = 0;
+	printf("请输入一写内容\n");
+	while ((c = getchar()) != '\n')  //获取输入的值   
+	{
+		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))   //判断字母  getchat  的值 大于 aA   小于 zZ  逻辑与 逻辑或
+		{
+			ZM++;
+		}
+		else if (c >= '0' && c<= '9')  //  字符  必须单引号
+		{
+			Nu++;
+		}
+		else if (c == ' ')   ////  字符  必须单引号
+		{
+			spaces++;
+		}
+		else
+			other++;
+	}
+	printf("字母=%d 数字=%d 空格=%d 其他=%d \n", ZM, Nu, spaces, other);
+
+		
+}
+
+//No.18
+#include<stdio.h>
+int main()
+{
+    int s = 0, a, n, t;
+    printf("请输入 a 和 n：\n");// a  是值  n 是加几次
+    scanf("%d%d", &a, &n);
+    t = a;
+    while (n > 0)
+    {
+        s += t;
+        a = a * 10;  //2+22+222     每加一次 等于*10  再加上原来的a
+        t += a;
+        n--;
+    }
+    printf("a+aa+...=%d\n", s);
+}
+
+//No.19
+#include <stdio.h>
+//一个数如果恰好等于它的因子之和，这个数就称为"完数"。例如6=1＋2＋3编程找出1000以内的所有完
+#define N 1000
+
+int main()
+{
+	int i, j, k, n, sum;
+	int a[256];
+	
+	for (i = 2; i <= N; i++)  //遍历 2 -1000 的数
+	{
+		sum = a[0] = 1;
+		k = 0;
+		for (j = 2 ; j <= (i / 2); j++)
+		{
+			if (i % j == 0)
+			{
+				sum += j;
+				a[++k] = j;
+			}
+		}
+		if (i == sum)
+		{
+			printf("%d=%d", i, a[0]);
+			for (n = 1; n <= k; n++)
+				printf("+%d", a[n]);
+			printf("\n");
+		}
+	}
+	return 0;
+}
+
+//No.20
+
+#include <stdio.h>
+
+int main()
+{
+	float h, s;
+	h = s = 100;
+	h /= 2;  //第一次反弹高度
+	for (int i = 2; i <= 2; i++)   //控制反弹次数
+	{
+		s = s + 2 * h; 
+		h /=2;  //高的每次减少一半
+	}
+	printf("10次落地经过%f米，第10次反弹高度%f", s, h);
+	return 0;
+}
+
+//NO.21
+#include <stdio.h>
+
+int main()
+// 猴子第一天摘下若干个桃子，当即吃了一半，还不瘾，又多吃了一个
+//第二天早上又将剩下的桃子吃掉一半，又多吃了一个。以后每天早上都吃了前一天剩下
+//的一半零一个 到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘了多少
+//x1为前一天桃子数，设x2为第二天桃子数， 则：x2=x1/2-1, x1=(x2+1)*2 
+{
+	int x = 1, day = 9;
+	while (day > 0)
+	{
+		x = (x +1)*2; //第二天加1 的2倍是前一天的数量
+		day--;
+
+	}
+	printf("%d", x);
+	return 0;
+}
+
+int main()
+{
+	int x = 1534, day = 9, n;
+	while (day<10&&day!=0)
+	{
+		x = x / 2 - 1;
+		day--;
+
+	}
+	return 0;
+}
+
+//No.22
+#include<stdio.h>
+//
+int main()
+// 个乒乓球队进行比赛，各出三人。甲队为a,b,c三人，乙队为x,y,z三人。已抽签决定比赛名单。有人向队员打听比赛的名单。a说他不和x比，c说他不和x,z比，
+{
+	char  a, b, c;
+	for (a = 'x'; a <= 'z'; a++)
+	{
+		for (b = 'x'; b < 'z'; b++)
+		{
+			if (a != b)
+			{
+				for (c = 'x'; c < 'z'; c++)
+				{
+					if (a != c && b != c)
+					{
+						if (a != 'x' && c != 'x' && c != 'z')  // a说他不和x比，c说他不和x,z比
+							printf("a->%c  b->%c  c->%c",a,b,c);
+					}
+				}
+			}
+
+		}
+	}
+
+	return 0;
+}
+
+//No.23
+#include <stdio.h>
+//打印菱形
+int main()
+{
+	int i, j, k;
+	for (i = 0; i <= 3; i++)  //循环控制打印  上面四行   控制行
+	{
+		for (j = 0; j <= 2 - i; j++)     // 控制输入空格
+		{
+			printf(" ");
+		}
+		for (k = 0; k <= 2 * i; k++)   //控制输出*
+		{
+			printf("*");
+		}
+		printf("\n");    
+	}
+	for (i = 0; i <= 2; i++)  //循环控制打印  下面四行 
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf(" ");
+		}
+		for (k = 0; k <= 4 - 2 * i; k++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+}
