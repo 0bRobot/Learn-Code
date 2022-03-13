@@ -679,7 +679,7 @@ int main()
 	return 0;
 }
 
-//No.23
+No.23
 #include <stdio.h>
 //打印菱形
 int main()
@@ -709,5 +709,181 @@ int main()
 		}
 		printf("\n");
 	}
+	return 0;
+}
+
+//No.24
+#include <stdio.h>
+//有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的
+//前20项之和
+int main()
+{
+	int  t;
+	float sum = 0;
+	float a = 2, b = 1;
+	for (int i=1;i<=20;i++)
+	{
+		sum = sum + a / b;  // a/b 的值赋值给sum   
+		t = a;   // a 的赋值给 临时变量t
+		a = a + b;  // a+b 的值 赋值给a
+		b = t;  // 临时变量t 赋值给b  
+	}
+	printf("%9.6f\n",sum);
+	return 0;
+}
+
+//No.25
+#include <stdio.h>
+// 求1+2!+3!+...+20!的和。  
+// 及 1+ 2*1+3*2*1+4*3*2*1 ...
+int main()
+{
+	long double sum=0,mix=1;
+	for (int i = 1; i <= 4; i++)
+	{
+		mix = mix * i;
+		sum = sum + mix;
+	}
+	
+	printf("%Lf",sum);  //%Lf 是输出 long double 型变量   %f 是输出 double 型变量 %f 是输出 float 型变量
+	return 0;
+}
+
+//No.26
+#include <stdio.h>
+// 利用递归方法求5!。  
+int fact(int j)
+{
+	int sum;
+	if (j == 0)
+	{
+		sum = 1;
+	}
+	else
+	{
+		sum = j * fact(j - 1);
+	}
+	return sum;
+}
+
+int main()
+{
+	int fact(int);
+	for(int i = 0; i <= 5; i++)
+	{
+		printf("%d!=%d\n",i,fact(i));
+	}
+	return 0;
+}
+
+//No.27
+#include <stdio.h>
+//利用递归函数调用方式，将所输入的5个字符，以相反顺序打印出来
+void Prinf(n)
+int n;
+{
+	char next;
+	if (n <= 1)
+	{
+		next = getchar();
+		printf("输出相反顺序\40:\40");
+		putchar(next);
+	}
+	else
+	{
+		next = getchar();
+		Prinf(n - 1);
+		putchar(next);
+	}
+}
+
+int main()
+{
+	int i = 5;
+	void Prinf(int n);
+	printf("请输入5个字符\40:\40");
+	Prinf(i);
+	printf("/n");
+	return 0;
+}
+
+// No.28
+//有5个人坐在一起，问第五个人多少岁？他说比第4个人大2岁。问第4个人岁数，他说比第3个人大2岁。问第三个人，又说比第2人大两岁。问第2个人，说比第一个人大两岁。最后问第一个人，他说是10岁。请问第五个人多大
+#include <stdio.h>
+int age(n)
+int n;
+{
+	int c;
+	if (n == 1) c = 10;
+	else
+	{
+		c = age(n - 1) + 2;
+		}
+	return(c);
+}
+
+int main()
+{
+	printf("%d\n", age(5));
+	return 0;
+}
+
+// No.29 
+//给一个不多于5位的正整数，要求：一、求它是几位数，二、逆序打印出各位数字。
+#include<stdio.h>
+int main()
+{
+	long a, b, c, d, e, x;
+	printf("请输入5个字符：");
+	scanf("%ld", &x);
+	a = x / 10000; //求的万位
+	b = x % 10000 / 1000;  //求的千位
+	c = x % 1000 / 100;  //求的百位
+	d = x % 100 / 10; //求的十位
+	e = x % 10; //求的个位
+
+	if (a != 0) {
+		printf("为 5 位数,逆序为： %ld %ld %ld %ld %ld\n", e, d, c, b, a);
+	}
+	else if (b != 0) {
+		printf("为 4 位数,逆序为： %ld %ld %ld %ld\n", e, d, c, b);
+	}
+	else if (c != 0) {
+		printf("为 3 位数,逆序为：%ld %ld %ld\n", e, d, c);
+	}
+	else if (d != 0) {
+		printf("为 2 位数,逆序为： %ld %ld\n", e, d);
+	}
+	else if (e != 0) {
+		printf("为 1 位数,逆序为：%ld\n", e);
+	}
+	return 0;
+}
+
+#include <stdio.h>
+// 列出所有五位数的回文数
+// 一个5位数，判断它是不是回文数。即12321是回文数，个位与万位相同，十位与千位相同
+int main()
+{
+	int count = 0;
+	for (int i = 10000; i <= 99999; i++)
+	{
+		int w=0, q=0, s=0, g=0;
+		w = i / 10000;   // 求万位的值
+		q = i % 10000 / 1000;  // 求千位的值
+		s = i % 100 / 10;   // 求十位的值
+		g = i % 10;     // 求个位的值
+		
+		if(w==g&&q==s)  //判断 万位和个位   千位和十位是否相等
+		{
+			count++;
+			printf("%d  ",i);
+
+			if (count % 9 == 0) //  换行，用 count 计数，每五个数换行
+				printf("\n");
+
+		}
+	}
+	printf("一共有%d个回文数",count);
 	return 0;
 }
