@@ -860,6 +860,8 @@ int main()
 	return 0;
 }
 
+
+// No.30
 #include <stdio.h>
 // 列出所有五位数的回文数
 // 一个5位数，判断它是不是回文数。即12321是回文数，个位与万位相同，十位与千位相同
@@ -885,5 +887,109 @@ int main()
 		}
 	}
 	printf("一共有%d个回文数",count);
+	return 0;
+}
+
+//NO.31
+
+#include<stdio.h>
+//请输入星期几的第一个字母来判断一下是星期几，如果第一个字母一样，则继续判断第二个字母
+
+
+int main()
+{
+	char i, j;
+	printf("请输入星期的第一个字母：\n");
+	scanf("%c",&i);
+	getchar();  //getchar()读取缓存
+	switch (i)
+	{
+	case 'm':
+		printf("monday  1 \n");
+		break;
+	case 'w':
+		printf("wednesday  3\n");
+		break;
+
+	case 'f':
+		printf("friday 5  \n");
+		break;
+	
+	case 't':
+		printf("请输入下一个字母：\n");
+		scanf("%c", &j);
+		if (j == 'h')
+		{
+			printf("thursday   4\n");
+			break;
+		}
+		if (j == 'h')
+		{
+			printf("thesday  2\n");
+			break;
+		}
+	case 's':
+		printf("请输入下一个字母：");
+		scanf("%c",&j);
+		if (j == 'a')
+		{
+			printf("saturday 6\n");
+			break;
+		}
+		if (j == 'u')
+		{
+			printf("sunday  7\n");
+			break;
+		}
+	default:
+		printf("输入错误\n");
+		break;
+	}
+
+	return 0;
+
+}
+
+#include <stdio.h>
+#include <math.h>
+
+
+int main()
+{
+	float a, b, c,x;
+	float K, S, Q, Y,Z;
+
+	printf("请输入三个值：<");
+	scanf("%f %f %f",&a,&b,&c);
+	getchar();
+	if (a == 0 && b == 0)
+	{
+		printf("Data error\n");
+	
+	}
+	if (a == 0 && b != 0)
+	{
+		x = -c / b;
+		printf("%f", x);
+	}
+	K = pow(b, 2) - 4.0 * a * c;
+	if (K < 0)
+	{
+		printf("无解");
+	}
+	else if( K==0 )
+	{
+		S = -b / (2 * a);
+		printf("%f", S);
+	}
+	else
+	{
+		Q = sqrt(K);
+		Y = (-b + Q) / (2.0 * a);
+		Z = (-b - Q) / (2.0 * a);
+		printf("%f%f", Y, Z);
+	}
+
+
 	return 0;
 }
