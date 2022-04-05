@@ -6,7 +6,7 @@ URLToken=$URL$KEY
 
 #system info
 SysTime=`date "+%Y-%m-%d %H:%M"`
-UPusers=`uptime | cut -d " " -f 9`
+UPusers=`uptime  | awk -Fuser '{print $1}' | awk '{print $NF}'`
 UMem=$(free -m |sed -n '2p' |awk '{print $3}')
 FMem=$(free -m |sed -n '2p' |awk '{print $4}')
 Hostname=`hostname`
