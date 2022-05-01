@@ -993,3 +993,281 @@ int main()
 
 	return 0;
 }
+
+//NO.32
+// 删除一个字符串中的指定字母，如：字符串 "aca"，删除其中的 a 字母。
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* DelChar(char* sdel, char* sCH)
+{
+	int AA[256];
+	if ( sdel == NULL )  //判断删除字母是否为空
+		return sCH;      // 为空返回 sCH
+
+	for (int i = 0; i < 256; i++)
+		AA[i] = 0;
+	for (int i = 0; i < strlen(sdel); i++) // 求删除字符串长度 是否为1
+		AA[sdel[i]] = 1;
+	
+	int bb=0;
+	for (int i = 0; i < strlen(sCH); i++) //先遍历目标字符串长度
+	{
+		if (!AA[sCH[i]])
+			sCH[bb++] = sCH[i];
+	}
+	sCH[bb] = '\0';
+	return sCH;
+}
+
+int main()
+{
+	char del[2] = "a";   //要删除的字母
+	char CH[7] = "abcdard"; // 目标字符串
+	printf("%s\n", DelChar(del, CH));
+	return 0;
+}
+
+//No33
+#include<stdio.h>
+#include<math.h>
+#define MAX 1000
+
+//判断一个数字是否为质数 /素数
+
+int prime[MAX];
+
+int isPrimeNaive(int n)
+{
+    if (n <= 1)
+        return 0;
+    for (int i = 2; i < n; i++)
+        if (n % i == 0)
+            return 0;
+    return 1;
+}
+
+int isPrime(int n)
+{
+    if (n <= 1)
+        return 0;
+    if (n == 2)
+        return 1;
+    if (n % 2 == 0)
+        return 0;
+    int limit = (int)sqrt((double)n);
+    for (int i = 3; i <= limit; i = i + 2)
+    {
+        if (n % i == 0)
+            return 0;
+    }
+    return 1;
+}
+
+void sieve()
+{
+    prime[0] = 0;
+    prime[1] = 0;
+    for (int i = 2; i < MAX; i++)
+        prime[i] = 1;
+    int limit = (int)sqrt((double)MAX);
+    for (int i = 2; i <= limit; i++)
+    {
+        if (prime[i])
+            for (int j = i * i; j <= MAX; j += i)
+                prime[j] = 0;
+    }
+}
+
+int isPrimeSieve(int n)
+{
+    if (prime[n])
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    sieve();
+    printf("N=%d %d\n", 1, isPrime(1));
+    printf("N=%d %d\n", 2, isPrime(2));
+    printf("N=%d %d\n", 3, isPrime(3));
+    printf("N=%d %d\n", 4, isPrime(4));
+    printf("N=%d %d\n", 7, isPrime(7));
+    printf("N=%d %d\n", 9, isPrime(9));
+    printf("N=%d %d\n", 13, isPrime(13));
+    printf("N=%d %d\n", 17, isPrime(17));
+    printf("N=%d %d\n", 100, isPrime(100));
+    printf("N=%d %d\n", 23, isPrime(23));
+    printf("N=%d %d\n", 1, isPrime(1));
+    return 0;
+}
+
+// No 34
+#include <stdio.h>
+// 函数的调用
+void hello_p()  //被调用的函数
+{
+	printf("hello world！\n");
+}
+
+void three_hellos()
+{
+	int a;
+	for (a = 1; a <= 5; a++)
+		hello_p();//调用函数
+}
+
+int main()
+{
+	three_hellos(); //调用函数
+}
+
+#include <stdio.h>
+// 字符串反转
+
+void reverse(char* s)
+{
+	int len = 0;
+	char* p = s;
+	while (*p != 0)
+	{
+		//printf("%s", p);
+		len++;         //求字符串长度
+		p++; //指针自增   
+	}
+
+	int i = 0;
+	char c;
+	while (i <= len / 2 - 1)
+	{  //交换字符串
+		c = *(s + 1);
+		*(s + i) = *(s + len - 1 - i);
+		*(s + len - 1 - i) = c;
+		i++;
+
+	}
+
+}
+int main()
+{
+	char s[] = "nihaoa!";
+	printf("%s \n", s);
+	reverse(s);// 反转字符串
+	printf("%s\n", s);
+	return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+//求100以内的素数
+int main()
+{
+    int i, j, k, n = 0;
+    for (i = 2; i <= 100; i++)
+    {
+        k = (int)sqrt(i);
+        for (j = 2; j <= k; j++)
+            if (i % j == 0) break;
+        if (j > k)
+        {
+            printf("%d ", i);
+            n++;
+            if (n % 5 == 0)
+                printf("\n");
+        }
+    }
+    return 0;
+}
+
+#include<stdio.h>
+#define N 3
+int main()
+{
+    int i, j, a[N][N], sum = 0,sum1=0;  // 3 行 3 列
+    printf("请输入矩阵(3*3)：\n");
+    
+    for (i = 0; i < N; i++)
+        for (j = 0; j < N; j++)
+            scanf("%d", &a[i][j]);
+    
+    for (i = 0; i < N; i++)
+    
+        sum += a[i][i]; //  a[0][0] + a [1][1] + a [2][2]
+
+
+    printf("对角线之和为：%d\n", sum);
+    printf("对角线之和为：%d\n", sum1 = a[0][2] + a[1][1] + a[2][0]);
+
+    return 0;
+}
+
+#include <stdio.h>
+//No 39
+//有一个已经排好序的数组。现输入一个数，要求按原来的规律将它插入数组中
+int main()
+{
+    int a[12]={1,4,6,9,13,16,19,28,40,65,100};
+    int temp1,temp2,number,end,i,j;
+    printf("原始数组是:\n");
+    for(i=0;i<11;i++)
+        printf("%4d",a[i]);
+    printf("\n插入一个新的数字: ");
+    scanf("%d",&number);
+    end=a[10];
+    if(number>end)
+        a[10]=number;
+    else
+    {
+        for(i=0;i<11;i++)
+        {
+            if(a[i]>number)
+            {
+                temp1=a[i];
+                a[i]=number;
+                for(j=i+1;j<12;j++)
+                {
+                    temp2=a[j];
+                    a[j]=temp1;
+                    temp1=temp2;
+                }
+                break;
+            }
+        }
+    }
+    for(i=0;i<12;i++)
+        printf("%4d",a[i]);
+    printf("\n");
+    return 0;
+}
+
+// No_40
+//将一个数组逆序输出
+#include<stdio.h>
+#define N 11
+int main()
+{
+    int a[N] = { 0,1,2,3,4,5,6,7,8,9,10};
+    int i, t;
+    
+    printf("原始数组是:\n");
+    for (i = 0; i < N; i++)
+        printf("%d ", a[i]);
+
+
+    for (i = 0; i < N / 2; i++)  // 用第一个与最后一个交换
+    {
+        t = a[i];
+        a[i] = a[N - 1 - i];
+        a[N - 1 - i] = t;
+    }
+   
+    printf("\n排序后的数组:\n");
+    for (i = 0; i < N; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
