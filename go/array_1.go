@@ -60,4 +60,25 @@ func main() {
 	fmt.Println(T1) // [[0 0 0 0] [0 0 0 0] [0 0 0 0]]
 	fmt.Println(T2) // [[1 4 6 78 89] [9 6 1 0 0] [0 0 0 0 0]]
 
+	//数组的遍历/输出
+	// arr7 := [6]int{1, 6, 7, 9, 8, 9}
+	//1.
+	for i := 0; i < len(arr7); i++ {
+		fmt.Println(arr7[i])
+	}
+	//2.
+	for i, v := range arr7 { // range 后面接数组   有两个返回值，i  为索引    v 为数组的元素
+		fmt.Println(i, v) //  i  为索引    v 为数组的元素   两个都打印
+	}
+	for _, V := range arr7 { //省略索引   _ 占位符替换  只需要输出数组的元素
+		fmt.Println(V)
+	}
+
+	for i := range arr7 { // 只输出下标  不输出元素  可以省略数组的返回变量
+		println(i) // 只输出数组下标
+	}
+
+	// 数组是值类型
+	// 数组传递方式 默认是传值   拷贝值
+	// 传值 使用可使用传址   (不常用)指针类型
 }
