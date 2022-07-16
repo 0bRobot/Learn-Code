@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<title> My Test </title>
+
+<font size="5" color=goldenrod>
+    <html>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>系统时间</title>
+        </head>
+ 
+        <body>
+            <script>
+                 Date.prototype.format = function (fmt) 
+                {
+                var o = {
+                    "y+": this.getFullYear, //年
+                    "M+": this.getMonth() + 1, //月份
+                    "d+": this.getDate(), //日
+                    "h+": this.getHours(), //小时
+                    "m+": this.getMinutes(), //分
+                    "s+": this.getSeconds() //秒
+                        };
+                        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                        for (var k in o)
+                        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                        return fmt;
+                }
+                setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+	        </script>
+	        <div id="dateTime"></div>
+        </body>
+    </html></font>
+
+<html>
+    <body background="/photo/404.jpg">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.5,minimum-scale=0.5,user-scalable=yse">
+
+	<center><h1></h1> <p ><font size="10%" color=steelblue> Welcome King</font>   </p> </h1> </center>
+    <center><h2><p style="color: chartreuse;"> Penetration Test Platform </p> </h2> </center>
+            
+            <body> 
+                <div class="boss">
+                    <div> <a href="dvwa" title="DVWA TEST" target="_blank"><img   src="photo/dd.png"  style= width="100%" height="100%"/></a></div>
+                    <div> <a href="sqli" title="Sqli-Labs TEST" target="_blank"> <img  src="photo/h1.png"  style= width="100%" height="100%"/></a></div>
+                    <div> <a href="pikachu" title="Pikachu-Master " target="_blank"><img  src="photo/k.png" width="100%" height="100%"/></a></div>
+                    <div> <a href="upload" title="upload—labs " target="_blank"><img  src="photo/up.jpg" width="100%" height="100%"/></a></div>
+                    <div> <a href="xss" title="XSS_game" target="_blank"><img  src="photo/game1.png" width="100%" height="100%"/></a></div>
+                    <div> <a href="bWAPP"title="Download File" target="_blank"><img  src="photo/bee.png"  style= width="100%" height="100%"/></a></div>
+                    <div> <a href="https://www.hackthebox.eu/invite" title="Hacker-BOX" target="_blank"><img  src="photo/hh.png" width="100%" height="100%"/></a></div>
+                    <div> <a href="https://overthewire.org/wargames/" title="Hacker-Games" target="_blank"><img  src="photo/m.png" width="100%" height="100%"/></a></div>
+                    <div> <a href="pi" title="Pi Management " target="_blank"><img  src="photo/pi.png" width="100%" height="100%"/></a></div>
+                </div>
+            </body>
+        <style>
+            img { max-width:100%;}
+            img, object { max-width: 100%;}
+            .boss{width:100%; overflow:visible}
+            .boss div{
+                width:11.1%;
+                float:left;
+                }
+            .boss div img{
+                 display:unset;
+                 width:60%;}       
+        </style>
+
+
+        
+    
+        <p><img src="photo/13.png" style="float:right"  width="20%" height="81%"/></p>
+	    <p><img src="photo/10.png" style="float:left"  width="20%" height="81%"/></p>
+           
+        <center><video width="57%" height="70%" controls>
+            <source src="photo/1.mp4" type="video/mp4">	  </video> 
+        </center>
+            
+            <center><font size=8 color=red >Linux</font></center>
+            <center style="color: green;"><h1>Intelligence is the ability to avoid doing work, yet getting the work done. </h1></tenter>
+            <center style="color: green;"><h1>My name is Linus, and I am your God<h1></center>
+                
+<hr style="height:10px;border:none;border-top:10px groove skyblue;" />
+        
+        <center> <table><tr>
+    		<td><img src="photo/1.jpg" width="680%" height="116%"/></td>
+		    <td><img src="photo/2.jpg" width="680%" height="116%"/></td>
+	        </tr></table>
+        </center>
+        
+
+</html>
