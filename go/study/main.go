@@ -1,6 +1,6 @@
 package main
 
-import "code/array"
+import "code/slice"
 
 //倒入路径的包
 
@@ -17,6 +17,7 @@ func main() {
 	//array.ExecCode4()
 	//array.ExecCode5()
 	//array.ExecCode6()
-	array.ExecCode7()
+	//array.ExecCode7()
 
+	slice.R2Slice()
 }
