@@ -1,6 +1,8 @@
 package main
 
-import "code/slice"
+import (
+	"code/mapS"
+)
 
 //倒入路径的包
 
@@ -18,6 +20,35 @@ func main() {
 	//array.ExecCode5()
 	//array.ExecCode6()
 	//array.ExecCode7()
+	// 切片
+	//slice.STest()
+	//slice.MackS()
+	//slice.SSlice()
+	//slice.SCopy()
+	//slice.RSlice()
+	//slice.AppAlice()
+	//slice.CopySlice()
+	//slice.DelSlice()
+	//slice.SExec1()
+	//slice.RevSlice()
+	//slice.FindS()
+	//slice.AppSlice()
+	//slice.DeduplicationSlice()
+	//slice.BjSlice()
+	//slice.MuSlice()
+	//slice.R2Slice()
+	//mapS.DefMap()
+	//mapS.RangMap()
+	//mapS.DelMap()
+	//mapS.SortMap()
+	//mapS.SliceMap()
+	//mapS.MapSlice()
+	//mapS.MapTest()
+	//mapS.StuMap()
+	//mapS.DelRep()
+	//mapS.SrtCount()
+	//mapS.MenPhone()
+	//mapS.FindWords()
+	mapS.EquMap()
 
-	slice.R2Slice()
 }
