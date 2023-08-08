@@ -1,7 +1,7 @@
 package main
 
 import (
-	"code/mapS"
+	"code/funcDome"
 )
 
 //倒入路径的包
@@ -49,6 +49,26 @@ func main() {
 	//mapS.SrtCount()
 	//mapS.MenPhone()
 	//mapS.FindWords()
-	mapS.EquMap()
+	//mapS.EquMap()
+	//mapS.SwapMap()
+	//funcDome.FuncDo()
+	//funcDome.FuncDom3()
+	//funcDome.FuncDom4()
+	//funcDome.FuncDom5()
+	//funcDome.FuncDom6()
+	//funcDome.FuncDom7()
+	//funcDome.DeferDome()
+	//funcDome.PanicDome()
+	//funcDome.RecoverDome()
+	//funcDome.DomeFun01()
+	//funcDome.DomeFun02()
+	//funcDome.DomeFun03()
+	//funcDome.DomeFun04()
+	//funcDome.DomeFun05()
+	//funcDome.AdvFunc01()
+	//funcDome.AdvFunc02()
+	//funcDome.AdvFunc03()
+	//funcDome.AdvFunc04()
+	funcDome.AdvFunc05()
 
 }
