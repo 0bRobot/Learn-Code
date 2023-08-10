@@ -1,8 +1,6 @@
 package main
 
-import (
-	"code/funcDome"
-)
+import "code/pointer"
 
 //倒入路径的包
 
@@ -69,6 +67,15 @@ func main() {
 	//funcDome.AdvFunc02()
 	//funcDome.AdvFunc03()
 	//funcDome.AdvFunc04()
-	funcDome.AdvFunc05()
+	//funcDome.AdvFunc05()
+	//pointer.DPointer()
+	//pointer.DPointer0()
+	//pointer.DPointer1()
+	//pointer.MakeDome()
+	//pointer.DPointer2()
+	//pointer.DPointer3()
+	//pointer.DPointer4()
+	//pointer.DPointer5()
+	pointer.DPointer6()
 
 }
