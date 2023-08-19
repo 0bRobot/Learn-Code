@@ -1,6 +1,6 @@
 package main
 
-import "code/pointer"
+import _struct "code/struct"
 
 //倒入路径的包
 
@@ -76,6 +76,29 @@ func main() {
 	//pointer.DPointer3()
 	//pointer.DPointer4()
 	//pointer.DPointer5()
-	pointer.DPointer6()
+	//pointer.DPointer6()
+	//_struct.StrDome()
+	//_struct.StrDome1()
+	//_struct.StrDome2()
+	//_struct.StrDome3()
+	//_struct.StrDome4()
+	//_struct.StrDome5()
+	//_struct.StrDome6()
+	//_struct.StrDome8()
+	//_struct.StrDome9()
+	//_struct.StrDome10()
+	//_struct.StrDome11()
+	//_struct.StrDome12()
+	//_struct.StrDome13()
+	//_struct.StrDome14()
+	//_struct.StrDome15()
+	//_struct.StrDome16()
+	//_struct.StrExe1()
+	//_struct.StrExe2()
+	//_struct.StrExe3()
+	//_struct.StrExe4()
+	//_struct.StrExe5()
+	//_struct.StrExe6()
+	_struct.StrExe7()
 
 }
