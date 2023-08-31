@@ -1,7 +1,5 @@
 package main
 
-import "code/Files"
-
 func main() {
 
 	//mangerStudents.Manger()
@@ -17,6 +15,14 @@ func main() {
 	//Files.Files3()
 	//Files.Files4()
 	//Files.Files5()
-	Files.Files6()
+	//Files.Files6()
+	//_interface.DemoInterface()
+	//_interface.DemoInterface2()
+	//_interface.InterfaceDemo()
+	//_interface.InterfaceDemo1()
+	//_interface.InterfaceDemo2()
+	//_interface.InterfaceDemo3()
+	//_interface.InterfaceDemo4()
+	//_interface.InterfaceDemo5()
 
 }
