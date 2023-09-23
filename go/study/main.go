@@ -1,6 +1,6 @@
 package main
 
-import _struct "code/struct"
+import "code/Interface"
 
 //倒入路径的包
 
@@ -99,6 +99,13 @@ func main() {
 	//_struct.StrExe4()
 	//_struct.StrExe5()
 	//_struct.StrExe6()
-	_struct.StrExe7()
+	//_struct.StrExe7()
+	//Interface.InterfaceDemo()
+	//Interface.InterfaceDemo1()
+	//Interface.Ex01()
+	//Interface.Ex02()
+	//Interface.Ex03()
+	//Interface.Ex04()
+	Interface.Ex05()
 
 }
